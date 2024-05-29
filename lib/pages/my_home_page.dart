@@ -13,7 +13,7 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           try {
-            final firstData = {'msg': '成功しましました。'};
+            final firstData = {'msg': '成功しました。'};
             await FirebaseFirestore.instance
                 .collection('data')
                 .doc()
