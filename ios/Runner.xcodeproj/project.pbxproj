@@ -525,6 +525,90 @@
 			};
 			name = Profile;
 		};
+		4459F30A2C077F4F000DB28B /* Debug-dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Debug-dev";
+		};
+		4459F30B2C077F4F000DB28B /* Profile-dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Profile-dev";
+		};
+		4459F30C2C077F4F000DB28B /* Release-dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Release-dev";
+		};
+		4459F30D2C077F4F000DB28B /* Debug-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Debug-prod";
+		};
+		4459F30E2C077F4F000DB28B /* Profile-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Profile-prod";
+		};
+		4459F30F2C077F4F000DB28B /* Release-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Release-prod";
+		};
+		4459F3102C077F4F000DB28B /* Debug-dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Debug-dev";
+		};
+		4459F3112C077F4F000DB28B /* Profile-dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Profile-dev";
+		};
+		4459F3122C077F4F000DB28B /* Release-dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Release-dev";
+		};
+		4459F3132C077F4F000DB28B /* Debug-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Debug-prod";
+		};
+		4459F3142C077F4F000DB28B /* Profile-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Profile-prod";
+		};
+		4459F3152C077F4F000DB28B /* Release-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Release-prod";
+		};
 		6CBB0379F0173BB2E92DE297 /* Profile-prod */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E63531BF5C96D47341223AC8 /* prodProfile.xcconfig */;
@@ -1052,6 +1136,12 @@
 				331C8088294A63A400263BE5 /* Debug */,
 				331C8089294A63A400263BE5 /* Release */,
 				331C808A294A63A400263BE5 /* Profile */,
+				4459F3102C077F4F000DB28B /* Debug-dev */,
+				4459F3112C077F4F000DB28B /* Profile-dev */,
+				4459F3122C077F4F000DB28B /* Release-dev */,
+				4459F3132C077F4F000DB28B /* Debug-prod */,
+				4459F3142C077F4F000DB28B /* Profile-prod */,
+				4459F3152C077F4F000DB28B /* Release-prod */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1078,6 +1168,12 @@
 				97C147061CF9000F007C117D /* Debug */,
 				97C147071CF9000F007C117D /* Release */,
 				249021D4217E4FDB00AE95B9 /* Profile */,
+				4459F30A2C077F4F000DB28B /* Debug-dev */,
+				4459F30B2C077F4F000DB28B /* Profile-dev */,
+				4459F30C2C077F4F000DB28B /* Release-dev */,
+				4459F30D2C077F4F000DB28B /* Debug-prod */,
+				4459F30E2C077F4F000DB28B /* Profile-prod */,
+				4459F30F2C077F4F000DB28B /* Release-prod */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
