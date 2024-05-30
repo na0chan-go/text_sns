@@ -14,14 +14,18 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           try {
-            final firstUser =
-                PublicUser(followingCount: 0, followerCount: 0, uid: 'first');
-            final firstData = firstUser.toJson();
-            await FirebaseFirestore.instance
+            final firstUserDocument = await FirebaseFirestore.instance
                 .collection('public_users')
-                .doc(firstUser.uid)
-                .set(firstData);
-            print('データの書き込みが成功しました');
+                .doc('first')
+                .get();
+            final firstUserJson = firstUserDocument.data();
+            if (firstUserJson == null) {
+              print('データが見つかりませんでした');
+              return;
+            } else {
+              final publicUser = PublicUser.fromJson(firstUserJson);
+              print('ユーザーのID: ${publicUser.uid}'); // ユーザーのID: first
+            }
           } catch (e) {
             print('アクセスが拒否されました');
           }
