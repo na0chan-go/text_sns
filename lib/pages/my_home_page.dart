@@ -20,14 +20,14 @@ class MyHomePage extends StatelessWidget {
                 .get();
             final firstUserJson = firstUserDocument.data();
             if (firstUserJson == null) {
-              print('データが見つかりませんでした');
+              debugPrint('データが見つかりませんでした');
               return;
             } else {
               final publicUser = PublicUser.fromJson(firstUserJson);
-              print('ユーザーのID: ${publicUser.uid}'); // ユーザーのID: first
+              debugPrint('ユーザーのID: ${publicUser.uid}'); // ユーザーのID: first
             }
           } catch (e) {
-            print('アクセスが拒否されました');
+            debugPrint('アクセスが拒否されました');
           }
         },
       ),
