@@ -8,8 +8,8 @@ part of 'public_user.dart';
 
 _$PublicUserImpl _$$PublicUserImplFromJson(Map<String, dynamic> json) =>
     _$PublicUserImpl(
-      followerCount: (json['followerCount'] as num).toInt(),
-      followingCount: (json['followingCount'] as num).toInt(),
+      followerCount: (json['followerCount'] as num?)?.toInt() ?? 0,
+      followingCount: (json['followingCount'] as num?)?.toInt() ?? 0,
       uid: json['uid'] as String,
     );
 

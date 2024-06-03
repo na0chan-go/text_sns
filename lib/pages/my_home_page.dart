@@ -15,9 +15,7 @@ class MyHomePage extends StatelessWidget {
         onPressed: () async {
           try {
             const data = PublicUser(
-              followerCount: 0,
-              followingCount: 0,
-              uid: 'second',
+              uid: 'third',
             );
             final json = data.toJson();
             await FirebaseFirestore.instance
