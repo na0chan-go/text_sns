@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:text_sns/controllers/auth_controller.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -51,10 +52,13 @@ class _SignupScreenState extends State<SignupScreen> {
 
   // email入力をする関数
   Widget _emailTextField() {
+    final controller = AuthController.to;
     return TextFormField(
       decoration: const InputDecoration(
         hintText: 'メールアドレス',
       ),
+      // フォームフィールドの情報を変数に保存する
+      onSaved: controller.setEmail,
       validator: (value) {
         // メールアドレスのバリデーション
         return GetUtils.isEmail(value!) ? null : 'メールアドレスを入力してください';
@@ -64,11 +68,13 @@ class _SignupScreenState extends State<SignupScreen> {
 
   // password入力をする関数
   Widget _passwordTextField() {
+    final controller = AuthController.to;
     return TextFormField(
       obscureText: true, // パスワードを隠す
       decoration: const InputDecoration(
         hintText: 'パスワード',
       ),
+      onSaved: controller.setPassword,
       validator: (value) {
         // パスワードのバリデーション
         return value!.length >= 8 ? null : 'パスワードは8文字以上で入力してください';
@@ -83,7 +89,7 @@ class _SignupScreenState extends State<SignupScreen> {
         // バリデーションを行う
         if (_formKey.currentState!.validate()) {
           // フォームフィールドの情報を変数に保存する
-          // _formKey.currentState!.save();
+          _formKey.currentState!.save();
         }
       },
       child: const Text('送信'),
