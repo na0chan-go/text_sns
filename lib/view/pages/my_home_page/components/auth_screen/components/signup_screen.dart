@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -55,7 +56,8 @@ class _SignupScreenState extends State<SignupScreen> {
         hintText: 'メールアドレス',
       ),
       validator: (value) {
-        return value!.isEmpty ? 'メールアドレスを入力してください' : null;
+        // メールアドレスのバリデーション
+        return GetUtils.isEmail(value!) ? null : 'メールアドレスを入力してください';
       },
     );
   }
@@ -68,7 +70,8 @@ class _SignupScreenState extends State<SignupScreen> {
         hintText: 'パスワード',
       ),
       validator: (value) {
-        return value!.isEmpty ? 'パスワードを入力してください' : null;
+        // パスワードのバリデーション
+        return value!.length >= 8 ? null : 'パスワードは8文字以上で入力してください';
       },
     );
   }
