@@ -20,8 +20,11 @@ class _SignupScreenState extends AuthState<SignupScreen> {
 
   @override
   Widget toggleLoginModeButton() {
+    const style = TextStyle(
+      fontSize: 25.0,
+    );
     return TextButton(
         onPressed: AuthController.to.onToggleIsLoginModeButtonPressed,
-        child: const Text('ログイン画面へ'));
+        child: const Text('ログイン画面へ', style: style));
   }
 }
