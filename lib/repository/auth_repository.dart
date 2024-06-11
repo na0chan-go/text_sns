@@ -39,4 +39,14 @@ class AuthRepository {
       return const Result.failure();
     }
   }
+
+  FutureResult<bool> sendMailVerification(User user) async {
+    final client = AuthClient();
+    try {
+      await client.sendMailVerification(user);
+      return const Result.success(true);
+    } catch (e) {
+      return const Result.failure();
+    }
+  }
 }
