@@ -20,7 +20,9 @@ class MyHomePage extends StatelessWidget {
         if (authController.rxAuthUser.value == null) {
           return const AuthScreen();
         } else {
-          return const Text('MainPage', style: style);
+          return ElevatedButton(
+              onPressed: authController.onSignOutButtonPressed,
+              child: const Text('ログアウト', style: style));
         }
       }),
     );
