@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:text_sns/constant/auth_constant.dart';
 import 'package:text_sns/repository/auth_repository.dart';
 import 'package:text_sns/ui_core/ui_helper.dart';
 
@@ -41,10 +42,10 @@ class AuthController extends GetxController {
     result.when(
       success: (res) {
         rxAuthUser.value = res;
-        UiHelper.showFlutterToast('新規登録が成功しました');
+        UiHelper.showFlutterToast(AuthConstant.signupSuccessMsg);
       },
       failure: () {
-        UiHelper.showFlutterToast('新規登録が失敗しました');
+        UiHelper.showFlutterToast(AuthConstant.signupFailureMsg);
       },
     );
   }
@@ -56,10 +57,10 @@ class AuthController extends GetxController {
     result.when(
       success: (res) {
         rxAuthUser.value = res;
-        UiHelper.showFlutterToast('ログインが成功しました');
+        UiHelper.showFlutterToast(AuthConstant.signinSuccessMsg);
       },
       failure: () {
-        UiHelper.showFlutterToast('ログインが失敗しました');
+        UiHelper.showFlutterToast(AuthConstant.signinFailureMsg);
       },
     );
   }
@@ -70,10 +71,10 @@ class AuthController extends GetxController {
     result.when(
       success: (_) {
         rxAuthUser.value = null;
-        UiHelper.showFlutterToast('ログアウトが成功しました');
+        UiHelper.showFlutterToast(AuthConstant.signoutSuccessMsg);
       },
       failure: () {
-        UiHelper.showFlutterToast('ログアウトが失敗しました');
+        UiHelper.showFlutterToast(AuthConstant.signoutFailureMsg);
       },
     );
   }
