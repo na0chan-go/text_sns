@@ -12,7 +12,7 @@ class ContentScreen extends StatelessWidget {
     return Column(
       children: [
         Obx(
-          () => Text(MainController.to.rxPublicUser.value?.uid ?? 'null',
+          () => Text(MainController.to.rxPublicUser.value?.name ?? 'null',
               style: style),
         ),
         const SizedBox(height: 20.0),

@@ -14,6 +14,16 @@ class FirestoreRepository {
     }
   }
 
+  FutureResult<bool> updateDoc(DocRef ref, SDMap json) async {
+    final client = FirestoreClient(); // create an instance of FirestoreClient
+    try {
+      await client.updateDoc(ref, json); // update a document in Firestore
+      return const Result.success(true); // return a successful result
+    } catch (e) {
+      return const Result.failure(); // return a failed result
+    }
+  }
+
   FutureResult<Doc> getDoc(DocRef ref) async {
     final client = FirestoreClient(); // create an instance of FirestoreClient
     try {
