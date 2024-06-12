@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:text_sns/controllers/auth_controller.dart';
 import 'package:text_sns/controllers/main_controller.dart';
+import 'package:text_sns/enums/env_key.dart';
 
 class ContentScreen extends StatelessWidget {
   const ContentScreen({super.key});
@@ -17,7 +18,7 @@ class ContentScreen extends StatelessWidget {
               style: style),
         ),
         const SizedBox(height: 20.0),
-        Text(dotenv.get("AWS_S3_USER_IMAGES_BUCKET"), style: style),
+        Text(dotenv.get(EnvKey.AWS_S3_USER_IMAGES_BUCKET.name), style: style),
         ElevatedButton(
             onPressed: authController.onSignOutButtonPressed,
             child: const Text('ログアウト', style: style)),
