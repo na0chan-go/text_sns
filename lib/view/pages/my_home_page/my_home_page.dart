@@ -22,7 +22,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Obx(() {
         final authUser = authController.rxAuthUser.value;
-        if (remoteConfigController.rxIsMaintenanceMode.value == true) {
+        if (remoteConfigController.rxIsMaintenanceMode.value) {
           return const MaintenanceScreen();
         } else if (authUser == null) {
           return const AuthScreen();
