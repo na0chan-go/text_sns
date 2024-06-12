@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:text_sns/constant/edit_constant.dart';
 import 'package:text_sns/controllers/auth_controller.dart';
 import 'package:text_sns/controllers/main_controller.dart';
 import 'package:text_sns/core/firestore/doc_ref_core.dart';
@@ -29,9 +30,9 @@ class EditController extends GetxController {
       if (oldPublicUser == null) return;
       final newPublicUser = oldPublicUser.copyWith(name: name); //　一部分のみ更新
       MainController.to.rxPublicUser.value = newPublicUser; // 新しく更新
-      UiHelper.showFlutterToast('ユーザーの更新が成功しました');
+      UiHelper.showFlutterToast(EditConstant.successMsg);
     }, failure: () {
-      UiHelper.showFlutterToast('ユーザーの更新が失敗しました');
+      UiHelper.showFlutterToast(EditConstant.failureMsg);
     });
   }
 }

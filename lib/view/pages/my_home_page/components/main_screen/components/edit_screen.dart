@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:text_sns/constant/edit_constant.dart';
 import 'package:text_sns/controllers/edit_controller.dart';
 import 'package:text_sns/view/common/rounded_button.dart';
 import 'package:text_sns/view/common/text_field_container.dart';
@@ -23,7 +24,7 @@ class _EditScreenState extends State<EditScreen> {
 
   // タイトル関数
   Widget _titleWidget() {
-    return const Text('ユーザー情報を編集',
+    return const Text(EditConstant.title,
         style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold));
   }
 
@@ -44,11 +45,11 @@ class _EditScreenState extends State<EditScreen> {
     return TextFieldContainer(
         child: TextFormField(
       decoration: const InputDecoration(
-        hintText: 'ニックネーム',
+        hintText: EditConstant.hintText,
       ),
       onSaved: EditController.to.setName,
       validator: (value) {
-        return value!.isEmpty ? 'ニックネームを入力してください' : null;
+        return value!.isEmpty ? EditConstant.validateMsg : null;
       },
     ));
   }
@@ -63,7 +64,7 @@ class _EditScreenState extends State<EditScreen> {
         }
         EditController.to.onPositiveButtonPressed();
       },
-      textValue: '更新する',
+      textValue: EditConstant.positiveButtonText,
     );
   }
 }
