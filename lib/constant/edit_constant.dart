@@ -6,4 +6,6 @@ class EditConstant {
 
   static const String successMsg = 'ユーザーの更新が成功しました';
   static const String failureMsg = 'ユーザーの更新が失敗しました';
+
+  static const String uploadImageFailureMsg = '画像のアップロードに失敗しました';
 }
