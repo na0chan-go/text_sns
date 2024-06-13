@@ -1,11 +1,14 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
 
 class FileCore {
-  static Future<CroppedFile?> getImage() async {
+  static Future<Uint8List?> getImage() async {
     final xFile = await _pickImage();
-    final croppedFile = await _cropImage(xFile);
-    return croppedFile;
+    final croppedImage = await _cropImage(xFile);
+    return croppedImage == null ? null : File(croppedImage.path).readAsBytes();
   }
 
   static Future<XFile?> _pickImage() async {
