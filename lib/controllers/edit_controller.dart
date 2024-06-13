@@ -28,7 +28,7 @@ class EditController extends GetxController {
     // 画像をアップロードする
     final repository = AWSS3Repository();
     final bucket = dotenv.get(EnvKey.AWS_S3_USER_IMAGES_BUCKET.name);
-    const object = 's3-first-image';
+    const object = 's3-second-image.jpg';
     final data = Stream.value(uint8list!);
     final result = await repository.putObject(
       bucket,
@@ -47,7 +47,7 @@ class EditController extends GetxController {
     final uid = AuthController.to.rxAuthUser.value!.uid;
     final ref = DocRefCore.publicUserDocRef(uid);
     final image =
-        ModeratedImage(bucketName: bucketName, filename: fileName).toJson();
+        ModeratedImage(bucketName: bucketName, fileName: fileName).toJson();
     final data = {
       'name': name,
       'image': image,

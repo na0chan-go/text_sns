@@ -10,7 +10,7 @@ abstract class ModeratedImage implements _$ModeratedImage {
     required String bucketName,
     @Default([]) List<Map<String, dynamic>> moderationLabels, // 不適切な複数の理由
     @Default('') moderationModelVersion, // 検証を行ったモデルの名前
-    @Default('') filename,
+    @Default('') fileName,
   }) = _ModeratedImage;
 
   factory ModeratedImage.fromJson(Map<String, dynamic> json) =>

@@ -25,7 +25,7 @@ mixin _$ModeratedImage {
       throw _privateConstructorUsedError; // 不適切な複数の理由
   dynamic get moderationModelVersion =>
       throw _privateConstructorUsedError; // 検証を行ったモデルの名前
-  dynamic get filename => throw _privateConstructorUsedError;
+  dynamic get fileName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,7 +43,7 @@ abstract class $ModeratedImageCopyWith<$Res> {
       {String bucketName,
       List<Map<String, dynamic>> moderationLabels,
       dynamic moderationModelVersion,
-      dynamic filename});
+      dynamic fileName});
 }
 
 /// @nodoc
@@ -62,7 +62,7 @@ class _$ModeratedImageCopyWithImpl<$Res, $Val extends ModeratedImage>
     Object? bucketName = null,
     Object? moderationLabels = null,
     Object? moderationModelVersion = freezed,
-    Object? filename = freezed,
+    Object? fileName = freezed,
   }) {
     return _then(_value.copyWith(
       bucketName: null == bucketName
@@ -77,9 +77,9 @@ class _$ModeratedImageCopyWithImpl<$Res, $Val extends ModeratedImage>
           ? _value.moderationModelVersion
           : moderationModelVersion // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      filename: freezed == filename
-          ? _value.filename
-          : filename // ignore: cast_nullable_to_non_nullable
+      fileName: freezed == fileName
+          ? _value.fileName
+          : fileName // ignore: cast_nullable_to_non_nullable
               as dynamic,
     ) as $Val);
   }
@@ -97,7 +97,7 @@ abstract class _$$ModeratedImageImplCopyWith<$Res>
       {String bucketName,
       List<Map<String, dynamic>> moderationLabels,
       dynamic moderationModelVersion,
-      dynamic filename});
+      dynamic fileName});
 }
 
 /// @nodoc
@@ -114,7 +114,7 @@ class __$$ModeratedImageImplCopyWithImpl<$Res>
     Object? bucketName = null,
     Object? moderationLabels = null,
     Object? moderationModelVersion = freezed,
-    Object? filename = freezed,
+    Object? fileName = freezed,
   }) {
     return _then(_$ModeratedImageImpl(
       bucketName: null == bucketName
@@ -128,7 +128,7 @@ class __$$ModeratedImageImplCopyWithImpl<$Res>
       moderationModelVersion: freezed == moderationModelVersion
           ? _value.moderationModelVersion!
           : moderationModelVersion,
-      filename: freezed == filename ? _value.filename! : filename,
+      fileName: freezed == fileName ? _value.fileName! : fileName,
     ));
   }
 }
@@ -140,7 +140,7 @@ class _$ModeratedImageImpl extends _ModeratedImage {
       {required this.bucketName,
       final List<Map<String, dynamic>> moderationLabels = const [],
       this.moderationModelVersion = '',
-      this.filename = ''})
+      this.fileName = ''})
       : _moderationLabels = moderationLabels,
         super._();
 
@@ -166,11 +166,11 @@ class _$ModeratedImageImpl extends _ModeratedImage {
 // 検証を行ったモデルの名前
   @override
   @JsonKey()
-  final dynamic filename;
+  final dynamic fileName;
 
   @override
   String toString() {
-    return 'ModeratedImage(bucketName: $bucketName, moderationLabels: $moderationLabels, moderationModelVersion: $moderationModelVersion, filename: $filename)';
+    return 'ModeratedImage(bucketName: $bucketName, moderationLabels: $moderationLabels, moderationModelVersion: $moderationModelVersion, fileName: $fileName)';
   }
 
   @override
@@ -184,7 +184,7 @@ class _$ModeratedImageImpl extends _ModeratedImage {
                 .equals(other._moderationLabels, _moderationLabels) &&
             const DeepCollectionEquality()
                 .equals(other.moderationModelVersion, moderationModelVersion) &&
-            const DeepCollectionEquality().equals(other.filename, filename));
+            const DeepCollectionEquality().equals(other.fileName, fileName));
   }
 
   @JsonKey(ignore: true)
@@ -194,7 +194,7 @@ class _$ModeratedImageImpl extends _ModeratedImage {
       bucketName,
       const DeepCollectionEquality().hash(_moderationLabels),
       const DeepCollectionEquality().hash(moderationModelVersion),
-      const DeepCollectionEquality().hash(filename));
+      const DeepCollectionEquality().hash(fileName));
 
   @JsonKey(ignore: true)
   @override
@@ -216,7 +216,7 @@ abstract class _ModeratedImage extends ModeratedImage {
       {required final String bucketName,
       final List<Map<String, dynamic>> moderationLabels,
       final dynamic moderationModelVersion,
-      final dynamic filename}) = _$ModeratedImageImpl;
+      final dynamic fileName}) = _$ModeratedImageImpl;
   const _ModeratedImage._() : super._();
 
   factory _ModeratedImage.fromJson(Map<String, dynamic> json) =
@@ -229,7 +229,7 @@ abstract class _ModeratedImage extends ModeratedImage {
   @override // 不適切な複数の理由
   dynamic get moderationModelVersion;
   @override // 検証を行ったモデルの名前
-  dynamic get filename;
+  dynamic get fileName;
   @override
   @JsonKey(ignore: true)
   _$$ModeratedImageImplCopyWith<_$ModeratedImageImpl> get copyWith =>

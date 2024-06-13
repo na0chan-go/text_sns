@@ -14,7 +14,7 @@ _$ModeratedImageImpl _$$ModeratedImageImplFromJson(Map<String, dynamic> json) =>
               .toList() ??
           const [],
       moderationModelVersion: json['moderationModelVersion'] ?? '',
-      filename: json['filename'] ?? '',
+      fileName: json['fileName'] ?? '',
     );
 
 Map<String, dynamic> _$$ModeratedImageImplToJson(
@@ -23,5 +23,5 @@ Map<String, dynamic> _$$ModeratedImageImplToJson(
       'bucketName': instance.bucketName,
       'moderationLabels': instance.moderationLabels,
       'moderationModelVersion': instance.moderationModelVersion,
-      'filename': instance.filename,
+      'fileName': instance.fileName,
     };
