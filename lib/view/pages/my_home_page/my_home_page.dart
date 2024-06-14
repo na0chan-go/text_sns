@@ -7,6 +7,7 @@ import 'package:text_sns/view/pages/my_home_page/components/auth_screen/auth_scr
 import 'package:text_sns/view/pages/my_home_page/components/main_screen/main_screen.dart';
 import 'package:text_sns/view/pages/my_home_page/components/verify_email_screen.dart';
 import 'package:text_sns/view/pages/my_home_page/components/maintenance_screen.dart';
+import 'package:text_sns/view/pages/my_home_page/original_drawer.dart';
 import '../../../flavors.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -20,6 +21,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(F.title),
       ),
+      drawer: const OriginalDrawer(),
       body: Obx(() {
         final authUser = authController.rxAuthUser.value;
         if (remoteConfigController.rxIsMaintenanceMode.value) {
