@@ -17,14 +17,7 @@ class _UpdateEmailPageState extends SimpleFormState<UpdateEmailPage> {
     final controller = Get.put(UpdateEmailController());
     return BasicPage(
       appBarTitle: 'メールアドレスを更新',
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          titleWidget(controller),
-          form(controller),
-          positiveButton(controller),
-        ],
-      ),
+      child: buildWidget(controller),
     );
   }
 }

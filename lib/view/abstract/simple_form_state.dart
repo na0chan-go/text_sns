@@ -6,6 +6,18 @@ import 'package:text_sns/view/common/text_field_container.dart';
 abstract class SimpleFormState<T extends StatefulWidget> extends State<T> {
   // フォームのキー
   final _formKey = GlobalKey<FormState>();
+  // 全要素
+  Widget buildWidget(SimpleFormController controller) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        titleWidget(controller),
+        form(controller),
+        positiveButton(controller),
+      ],
+    );
+  }
+
   // タイトル関数
   Widget titleWidget(SimpleFormController controller) {
     return Text(controller.title,
@@ -28,6 +40,7 @@ abstract class SimpleFormState<T extends StatefulWidget> extends State<T> {
   Widget textField(SimpleFormController controller) {
     return TextFieldContainer(
         child: TextFormField(
+      obscureText: controller.obscureText,
       decoration: InputDecoration(
         hintText: controller.hintText,
       ),
