@@ -6,7 +6,7 @@ import 'package:text_sns/view/common/basic_page.dart';
 
 class UpdateEmailPage extends StatefulWidget {
   const UpdateEmailPage({super.key});
-  static const path = '/update-email';
+  static const path = '/updateEmail';
   @override
   State<UpdateEmailPage> createState() => _UpdateEmailPageState();
 }

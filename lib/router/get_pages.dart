@@ -3,6 +3,7 @@ import 'package:text_sns/view/pages/account_page.dart';
 import 'package:text_sns/view/pages/logouted_page.dart';
 import 'package:text_sns/view/pages/reauthenticate_page.dart';
 import 'package:text_sns/view/pages/update_email_page.dart';
+import 'package:text_sns/view/pages/update_password_page.dart';
 
 class GetPages {
   static final List<GetPage> value = [
@@ -22,5 +23,9 @@ class GetPages {
       name: ReauthenticatePage.path,
       page: () => const ReauthenticatePage(),
     ),
+    GetPage(
+      name: UpdatePasswordPage.path,
+      page: () => const UpdatePasswordPage(),
+    )
   ];
 }

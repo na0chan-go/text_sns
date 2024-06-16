@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:text_sns/controllers/abstract/simple_form_controller.dart';
 import 'package:text_sns/controllers/auth_controller.dart';
@@ -7,6 +8,7 @@ import 'package:text_sns/ui_core/ui_helper.dart';
 import 'package:text_sns/ui_core/validator_core.dart';
 import 'package:text_sns/view/pages/reauthenticate_page.dart';
 import 'package:text_sns/view/pages/update_email_page.dart';
+import 'package:text_sns/view/pages/update_password_page.dart';
 
 class ReauthenticateController extends SimpleFormController {
   @override
@@ -36,12 +38,13 @@ class ReauthenticateController extends SimpleFormController {
       final purpose = Get.parameters[key];
       if (purpose == null) return;
       final enumPurpose = ReauthenticatePurpose.values.byName(purpose);
+      debugPrint('enumPurpose: $enumPurpose');
       switch (enumPurpose) {
         case ReauthenticatePurpose.updateEmail:
-          Get.to(() => UpdateEmailPage.path);
+          Get.to(const UpdateEmailPage());
           break;
         case ReauthenticatePurpose.updatePassword:
-          // TODO: パスワード変更画面への遷移処理を追加
+          Get.to(const UpdatePasswordPage());
           break;
         case ReauthenticatePurpose.deleteUser:
           // TODO: ユーザー削除処理を追加
