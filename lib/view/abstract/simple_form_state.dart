@@ -45,9 +45,7 @@ abstract class SimpleFormState<T extends StatefulWidget> extends State<T> {
         hintText: controller.hintText,
       ),
       onSaved: controller.setText,
-      validator: (value) {
-        return value!.isEmpty ? controller.validatorMsg : null;
-      },
+      validator: controller.validator,
     ));
   }
 
