@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:text_sns/constant/account_constant.dart';
 import 'package:text_sns/controllers/abstract/simple_form_controller.dart';
 import 'package:text_sns/controllers/auth_controller.dart';
 import 'package:text_sns/enums/reauthenticate_purpose.dart';
@@ -49,8 +50,8 @@ class ReauthenticateController extends SimpleFormController {
           break;
         case ReauthenticatePurpose.deleteUser:
           DialogCore.cupertinoAlertDialog(
-            'ユーザーを削除しますが本当によろしいですか？',
-            '最終確認',
+            AccountConstant.confirmDeleteUserMsg,
+            AccountConstant.confirmDeleteUserTitle,
             () {
               Get.back(); // ダイアログを閉じる
               AuthController.to.deleteUser();
