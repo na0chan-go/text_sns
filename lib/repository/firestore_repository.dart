@@ -24,6 +24,16 @@ class FirestoreRepository {
     }
   }
 
+  FutureResult<bool> deleteDoc(DocRef ref) async {
+    final client = FirestoreClient(); // create an instance of FirestoreClient
+    try {
+      await client.deleteDoc(ref); // delete a document from Firestore
+      return const Result.success(true); // return a successful result
+    } catch (e) {
+      return const Result.failure(); // return a failed result
+    }
+  }
+
   FutureResult<Doc> getDoc(DocRef ref) async {
     final client = FirestoreClient(); // create an instance of FirestoreClient
     try {
