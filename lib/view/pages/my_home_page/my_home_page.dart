@@ -14,12 +14,16 @@ class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
   @override
   Widget build(BuildContext context) {
-    Get.put(MyHomePageController());
+    final controller = Get.put(MyHomePageController());
     final authController = Get.put(AuthController());
     final remoteConfigController = Get.put(RemoteConfigController());
     return Scaffold(
       appBar: AppBar(
         title: Text(F.title),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: controller.onFloatingActionButtonPressed,
+        child: const Icon(Icons.add),
       ),
       drawer: const OriginalDrawer(),
       body: Obx(() {
