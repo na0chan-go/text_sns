@@ -22,4 +22,8 @@ class AuthClient {
   Future<void> sendMailVerification(User user) async {
     await user.sendEmailVerification();
   }
+
+  Future<void> verifyBeforeUpdateEmail(User user, String newEmail) async {
+    await user.verifyBeforeUpdateEmail(newEmail);
+  }
 }
