@@ -26,6 +26,7 @@ class UpdateEmailController extends SimpleFormController {
     result.when(success: (_) {
       UiHelper.showFlutterToast(successMsg);
       Get.back(); // ページを1つ戻る
+      Get.back(); // ページを2つ戻る
     }, failure: () {
       UiHelper.showFlutterToast(failureMsg);
     });

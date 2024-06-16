@@ -92,6 +92,6 @@ class AuthController extends GetxController {
   void _toggleIsLoginMode() => rxIsLoginMode.value = !rxIsLoginMode.value;
 
   void onEditEmailButtonPressed() {
-    Get.toNamed(ReauthenticatePage.generatePath('update_email'));
+    Get.toNamed(ReauthenticatePage.generatePath('update-email'));
   }
 }
