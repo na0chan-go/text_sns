@@ -43,4 +43,16 @@ class FirestoreRepository {
       return const Result.failure(); // return a failed result
     }
   }
+
+  FutureResult<List<QDoc>> getDocs(MapQuery query) async {
+    final client = FirestoreClient(); // create an instance of FirestoreClient
+    try {
+      final qSnapshot =
+          await client.getDocs(query); // get documents from Firestore
+      final qDocs = qSnapshot.docs; // get the documents from the snapshot
+      return Result.success(qDocs); // return a successful result
+    } catch (e) {
+      return const Result.failure(); // return a failed result
+    }
+  }
 }
