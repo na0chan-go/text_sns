@@ -14,4 +14,6 @@ class QueryCore {
       .limit(10);
   static MapQuery whereInUsersQuery(List<String> uids) =>
       ColRefCore.publicUsersColRef().where('uid', whereIn: uids);
+  static MapQuery userPostsQuery(String uid) =>
+      ColRefCore.postsColRef(uid).limit(10);
 }
