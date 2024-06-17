@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:get/get.dart';
 import 'package:text_sns/constant/image_constant.dart';
+import 'package:text_sns/constant/profile_constant.dart';
 import 'package:text_sns/controllers/abstract/posts_controller.dart';
 import 'package:text_sns/core/firestore/doc_ref_core.dart';
 import 'package:text_sns/core/firestore/query_core.dart';
@@ -41,7 +42,7 @@ class ProfileController extends PostsController {
         rxPublicUser.value = publicUser;
       }
     }, failure: () {
-      UiHelper.showFlutterToast('ユーザーの取得に失敗しました');
+      UiHelper.showFlutterToast(ProfileConstant.getUserFailureMsg);
     });
   }
 

@@ -1,5 +1,6 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
+import 'package:text_sns/constant/main_constant.dart';
 import 'package:text_sns/controllers/auth_controller.dart';
 import 'package:text_sns/core/firestore/doc_ref_core.dart';
 import 'package:text_sns/enums/env_key.dart';
@@ -34,7 +35,7 @@ class MainController extends GetxController {
         await _createPublicUser(ref, uid);
       }
     }, failure: () {
-      UiHelper.showFlutterToast('ユーザーの読み取りに失敗しました');
+      UiHelper.showFlutterToast(MainConstant.getUserFailureMsg);
     });
   }
 
@@ -47,9 +48,9 @@ class MainController extends GetxController {
     final result = await repository.createDoc(ref, json);
     result.when(success: (_) {
       rxPublicUser.value = newPublicUser;
-      UiHelper.showFlutterToast('ユーザーを作成しました');
+      UiHelper.showFlutterToast(MainConstant.createUserSuccessMsg);
     }, failure: () {
-      UiHelper.showFlutterToast('ユーザーの作成に失敗しました');
+      UiHelper.showFlutterToast(MainConstant.createUserFailureMsg);
     });
   }
 }
