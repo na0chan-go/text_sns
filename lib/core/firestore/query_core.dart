@@ -12,4 +12,6 @@ class QueryCore {
       .collectionGroup('posts')
       .orderBy('createdAt', descending: true)
       .limit(10);
+  static MapQuery whereInUsersQuery(List<String> uids) =>
+      ColRefCore.publicUsersColRef().where('uid', whereIn: uids);
 }
