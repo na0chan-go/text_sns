@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:text_sns/controllers/profile_controller.dart';
 import 'package:text_sns/view/common/basic_page.dart';
 import 'package:get/get.dart';
-import 'package:text_sns/controllers/main_controller.dart';
 import 'package:text_sns/view/common/byte_image.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends HookWidget {
   const ProfilePage({super.key});
-  static const path = '/profile/:uid';
+  static const uidKey = 'uid'; // 'uid' is a key for 'path
+  static const path = '/profile/:$uidKey';
   static String generatePath(String uid) => '/profile/$uid';
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ProfileController());
+    useEffect(() {
+      controller.init();
+      return;
+    }, []);
     const style = TextStyle(fontSize: 30.0);
     return BasicPage(
       appBarTitle: '自分のプロフィール',
@@ -18,19 +25,21 @@ class ProfilePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Obx(
-              () => Text(MainController.to.rxPublicUser.value?.name ?? 'null',
-                  style: style),
+              () => Text(
+                controller.rxPublicUser.value?.name ?? 'null',
+                style: style,
+              ),
             ),
             const SizedBox(height: 20.0),
             Obx(
               () => ByteImage(
-                bytes: MainController.to.rxUint8List.value,
+                bytes: controller.rxUint8List.value,
                 length: 120.0,
               ),
             ),
             const SizedBox(height: 20.0),
             Obx(() {
-              final publicUser = MainController.to.rxPublicUser.value;
+              final publicUser = controller.rxPublicUser.value;
               if (publicUser == null) {
                 return const SizedBox.shrink();
               } else {
